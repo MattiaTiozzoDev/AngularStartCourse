@@ -1,6 +1,6 @@
 <div class="product">
-    <img src="assets/img/tazza_codefather.jpg" alt="">
-    <h3>The Codefather</h3>
-    <h2>23.55 $</h2>
-    <button>Aggiungi al carrello</button>
+    <img [src]="product.imgUrl" alt="">
+    <h3>{{product.title}}</h3>
+    <h2>{{product.price}} $</h2>
+    <button (click)="addToCart()" >Aggiungi al carrello</button>
 </div>

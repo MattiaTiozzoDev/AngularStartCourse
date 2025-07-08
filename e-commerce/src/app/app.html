@@ -1,13 +1,12 @@
 
-<navbar-component></navbar-component>
+<navbar-component [selectedPrice]="selectedPrice"></navbar-component>
 <div class="product-container">
-  <product-component></product-component>
-  <product-component></product-component>
-  <product-component></product-component>
-  <product-component></product-component>
-  <product-component></product-component>
-  <product-component></product-component>
-  <product-component></product-component>
-  <product-component></product-component>
-  <product-component></product-component>
+  <product-component
+      [product]="product1"
+      (priceEmitter)="onPriceEmitted($event)">
+  </product-component>
+  <product-component
+      [product]="product2"
+      (priceEmitter)="onPriceEmitted($event)">
+  </product-component>
 </div>
