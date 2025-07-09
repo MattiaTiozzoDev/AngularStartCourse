@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'navbar-component',
@@ -9,5 +10,7 @@ import { Component, Input } from '@angular/core';
 export class NavbarComponent {
 
   @Input() selectedPrice : number;
+
+  constructor(public cartService: CartService){}
 
 }

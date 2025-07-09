@@ -1,5 +1,7 @@
 export type ProductType = {
-    imgUrl : string,
+    id?: number,
+    imgUrl? : string,
     title: string,
-    price: number
+    price: number,
+    promotion?: boolean
 }

@@ -1,12 +1,13 @@
 
 <navbar-component [selectedPrice]="selectedPrice"></navbar-component>
 <div class="product-container">
-  <product-component
-      [product]="product1"
-      (priceEmitter)="onPriceEmitted($event)">
-  </product-component>
-  <product-component
-      [product]="product2"
-      (priceEmitter)="onPriceEmitted($event)">
-  </product-component>
+  @for (product of products; track product.id){
+    <product-component 
+        ProductHover
+        ProductClick
+        [product]="product"
+        (priceEmitter)="onPriceEmitted($event)">
+    </product-component>
+  }
+
 </div>
