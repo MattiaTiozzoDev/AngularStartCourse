@@ -9,7 +9,7 @@ export class ProductClickDirective {
 
   constructor() { }
 
-  @HostBinding("class.background-yellow")
+  @HostBinding("class.border-selected")
   get cssClass(){
     return this.clicked;
   }

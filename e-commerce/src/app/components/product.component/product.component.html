@@ -1,10 +1,10 @@
-<div class="product" [ngClass]="{'promotion': !!product.promotion }">
+<div class="product" >
     @if (!!product?.imgUrl){
         <img [src]="product.imgUrl" alt="" >
     } @else {
         <img  src="assets/img/no_img.jpg" >
     }
     <h3>{{product.title}}</h3>
-    <h2>{{product.price}} $</h2>
+    <h2 [ngClass]="{'promotion': !!product.promotion }">{{product.price}} $</h2>
     <button (click)="addToCart()" >Aggiungi al carrello</button>
 </div>
