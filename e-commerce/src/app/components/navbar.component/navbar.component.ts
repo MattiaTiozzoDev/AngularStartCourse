@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'navbar-component',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -11,13 +12,13 @@ export class NavbarComponent {
 
   public cartIsOpen = false;
 
-  @Input() selectedPrice : number;
+  @Input() selectedPrice: number;
 
   @Output() showCartEmitter = new EventEmitter<boolean>();
 
-  constructor(public cartService: CartService){}
+  constructor(public cartService: CartService) { }
 
-  showCart(){
+  showCart() {
     this.cartIsOpen = !this.cartIsOpen;
     this.showCartEmitter.emit(this.cartIsOpen);
   }

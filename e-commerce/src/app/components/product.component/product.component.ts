@@ -1,23 +1,23 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductType } from '../../models/types';
-import { NgClass } from '@angular/common';
+import { CurrencyPipe, NgClass, TitleCasePipe } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'product-component',
-  imports: [NgClass],
+  imports: [NgClass, CurrencyPipe, TitleCasePipe],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'
 })
 export class ProductComponent {
 
-  @Input() product : ProductType ;
+  @Input() product: ProductType;
 
   @Output() priceEmitter = new EventEmitter<number>();
 
-  constructor(private cartService: CartService){}
+  constructor(private cartService: CartService) { }
 
-  addToCart(){
+  addToCart() {
     //this.priceEmitter.emit(this.product.price);
     this.cartService.addToTotal(this.product.price);
   }

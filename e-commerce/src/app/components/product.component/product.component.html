@@ -1,18 +1,18 @@
-<div class="product" >
+<div class="product">
     <div class="w-100 flex justify-end">
         <i class="fa-solid fa-circle-info info-icon"></i>
     </div>
     @if (!!product?.imgUrl){
-        <img [src]="product.imgUrl" alt="" >
+    <img [src]="product.imgUrl" alt="">
     } @else {
-        <img  src="assets/img/no_img.jpg" >
+    <img src="assets/img/no_img.jpg">
     }
-    <h3>{{product.title}}</h3>
+    <h3>{{product.title | titlecase}}</h3>
     <div class="flex">
         <h2 [ngClass]="{'promotion': !!product.promotion }">
-            {{product.price}} $ 
+            {{product.price | currency:'EUR'}}
         </h2>
     </div>
 
-    <button (click)="addToCart()" >Aggiungi al carrello</button>
+    <button (click)="addToCart()">Aggiungi al carrello</button>
 </div>
