@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService  {
+export class ProductService {
 
-  private baseUrl = "http://localhost:3000/"
+  private baseUrl = "http://localhost:3000/";
 
-  constructor(private http : HttpClient ) {}
+  constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<ProductType[]> {
-    return this.http.get<ProductType[]>(this.baseUrl + "products");
+  public getProducts(): Observable<ProductType[]> {
+    return this.http.get<ProductType[]>(this.baseUrl + "products")
   }
 }

@@ -30,6 +30,12 @@ async function getProducts(req, res) {
   res.json(products);
 }
 
+async function getProductById(req, res) {
+  const id = parseInt(req.params.id);
+  let product = products.find((product) => product.id == id);
+  res.json(product)
+}
+
 async function createProduct(req, res) {
   const { title } = req.body;
   if (!title) {
@@ -51,6 +57,7 @@ async function deleteProduct(req, res) {
 module.exports = {
   loadProducts,
   getProducts,
+  getProductById,
   createProduct,
   deleteProduct,
 };
