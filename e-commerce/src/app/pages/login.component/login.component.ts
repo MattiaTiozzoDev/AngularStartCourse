@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { UserType } from '../../models/types';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'login-component',
@@ -12,11 +14,16 @@ export class LoginComponent {
   public username: string;
   public password: string;
 
+  constructor(public authService: AuthService) { }
+
   login() {
-    const user = {
+    const user: UserType = {
       username: this.username,
       password: this.password
     }
-    console.log(JSON.stringify(user));
+    let isLoggedIn = this.authService.login(user);
+    if (isLoggedIn) {
+
+    }
   }
 }

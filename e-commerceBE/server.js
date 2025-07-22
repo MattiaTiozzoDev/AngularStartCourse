@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
-const authController = require('./controllers/authController');
 const productsRoutes = require('./routes/productsRoutes');
 const productsController = require('./controllers/productsController');
 const cors = require('cors');
